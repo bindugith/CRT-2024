@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int a,b,c;
+    scanf("%d %d %d",&a,&b,&c);
+    switch(c){
+        case 1:
+        int d=a+b;
+        printf("%d",d);
+        break;
+        case 2:
+        int e=a-b;
+        printf("%d",e);
+        break;
+        case 3:
+        int f=a*b;
+        printf("%d",f);
+        break;
+        case 4:
+        int g=a/b;
+        printf("%d",g);
+        break;
+        default:
+        printf("not in choice");
+        break;
+    }
+
+    return 0;
+}
