@@ -1,0 +1,132 @@
+Write a program to find the sum of elements in each row and column and also to find the greatest sum in rows and columns.
+
+Input Format
+
+Read size of rows and columns Read elements for matrix
+
+Constraints
+
+1<=n<10^7
+
+Output Format
+
+Print sum of rows in first line Print highest row no in next line Print sum of columns in next line Print highest column no in next line
+
+Sample Input 0
+
+3
+3
+1 6 8
+2 5 1
+3 8 2
+Sample Output 0
+
+15 8 13
+Row 1
+6 19 11
+Column 2
+Submissions: 110
+Max Score: 0
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+ 
+f
+1
+#include <math.h>
+2
+#include <stdio.h>
+3
+#include <string.h>
+4
+#include <stdlib.h>
+5
+#include <assert.h>
+6
+#include <limits.h>
+7
+#include <stdbool.h>
+8
+​
+9
+int main() {
+10
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+11
+    int n,m;
+12
+    int sum1,r_max=0,lar=0,sum2,c_max=0,lar1=0;
+13
+    scanf("%d\n%d",&n,&m);
+14
+    int a[n][m];
+15
+    for(int i=0;i<n;i++){
+16
+        for(int j=0;j<m;j++){
+17
+            scanf("%d",&a[i][j]);
+18
+        }
+19
+    }
+20
+    for(int i=0;i<n;i++){
+21
+        sum1=0;
+22
+        for(int j=0;j<m;j++){
+23
+            sum1=sum1+a[i][j];  
+24
+        }
+25
+        printf("%d ",sum1);
+26
+        if(lar<sum1){
+27
+            lar=sum1;
+28
+            r_max++;
+29
+        }
+30
+    }
+31
+    printf("\n");
+32
+        printf("Row %d",r_max);
+33
+    printf("\n");
+34
+    for(int i=0;i<n;i++){
+35
+        sum2=0;
+36
+        for(int j=0;j<m;j++){
+37
+            sum2=sum2+a[j][i];
+38
+        }
+39
+        printf("%d ",sum2);
+40
+        if(lar1<sum2){
+41
+            lar1=sum2;
+42
+            c_max++;
+43
+        }
+44
+    }
+45
+    printf("\n");
+46
+    printf("Column %d",c_max);
+47
+    return 0;
+48
+}
